@@ -58,7 +58,7 @@ frappe.ui.form.on('Housing Booking', {
     },
     plot_no(frm,cdt,cdn){
          frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"Plot List",
                     filters: {
@@ -68,7 +68,7 @@ frappe.ui.form.on('Housing Booking', {
                 }, 
                 callback: function(r) {
                     frappe.call({
-                            method:"frappe.client.get_value",
+                            method: "frappe.client.get_value",
                             args: {
                                 doctype:"Project",
                                 filters: {
@@ -104,7 +104,7 @@ frappe.ui.form.on('Housing Booking', {
     },
     booking_date(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -120,7 +120,7 @@ frappe.ui.form.on('Housing Booking', {
     },
     handover_date(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -136,7 +136,7 @@ frappe.ui.form.on('Housing Booking', {
     },
     handover_date__bs_(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -152,7 +152,7 @@ frappe.ui.form.on('Housing Booking', {
     },
     booking_date__bs_(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -195,7 +195,7 @@ frappe.ui.form.on('Housing Booking',  'validate',  function(frm) {
 frappe.ui.form.on("Installment Payment Plan", "date_nepali", function(frm, cdt, cdn) {
     let item = locals[cdt][cdn]; 
      frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -216,7 +216,7 @@ frappe.ui.form.on("Installment Payment Plan", "date_nepali", function(frm, cdt, 
 frappe.ui.form.on("Installment Payment Plan", "date", function(frm, cdt, cdn) {
     let item = locals[cdt][cdn]; 
      frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -242,7 +242,7 @@ frappe.ui.form.on("Installment Payment Plan", "amount", function(frm, cdt, cdn) 
         frm.doc.payment_schedule.forEach(d=>{
             
             frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"Installment",
                     filters: {
@@ -297,7 +297,7 @@ frappe.ui.form.on("Installment Payment Plan", {
          frm.doc.payment_schedule.forEach(d=>{
             
             frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"Installment",
                     filters: {
