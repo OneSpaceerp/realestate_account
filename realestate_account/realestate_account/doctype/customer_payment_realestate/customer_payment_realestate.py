@@ -4,8 +4,10 @@
 import frappe
 from frappe.model.document import Document
 @frappe.whitelist()
-def get_payment_list():
-    arg_booking_no = frappe.form_dict.name
+def get_payment_list(name=None):
+    if not name:
+        name = frappe.form_dict.get('name')
+
     query = """
         SELECT d.Installment, d.amount - IFNULL((
             SELECT SUM(b.paid_amount) AS paid_amount
@@ -16,11 +18,12 @@ def get_payment_list():
         ), 0) AS receivable_amount
         FROM `tabHousing Booking` AS c
         INNER JOIN `tabInstallment Payment Plan` AS d ON c.name = d.parent
-        WHERE c.name = '{}'
+        WHERE c.name = %s
         ORDER BY d.idx ASC
-    """.format(arg_booking_no)
+    """
     
-    data = frappe.db.sql(query, as_dict=True)
+    data = frappe.db.sql(query, (name,), as_dict=True)
     return data
+
 class CustomerPaymentRealestate(Document):
 	pass

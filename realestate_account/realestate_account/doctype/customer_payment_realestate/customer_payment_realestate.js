@@ -6,7 +6,7 @@
 frappe.ui.form.on('Customer Payment Realestate', {
 	booking_no(frm, cdt, cdn) {
         frappe.call({
-            method:"frappe.client.get_value",
+            method: "frappe.client.get_value",
             args: {
                 doctype:"Housing Booking",
                 filters: {
@@ -75,7 +75,7 @@ frappe.ui.form.on('Customer Payment Realestate', {
     },
     payment_date(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
@@ -91,7 +91,7 @@ frappe.ui.form.on('Customer Payment Realestate', {
     },
     payment_date__nepali_(frm, cdt, cdn) {
         frappe.call({
-                method:"frappe.client.get_value",
+                method: "frappe.client.get_value",
                 args: {
                     doctype:"DateMiti",
                     filters: {
